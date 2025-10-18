@@ -1,14 +1,24 @@
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
 
-const express = require('express');
+dotenv.config();
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-// Ruta principal (homepage)
-app.get('/', (req, res) => {
-  res.send('¡Hola, mundo desde Express!');
+// Middlewares básicos
+app.use(cors());
+app.use(express.json());
+
+// Rutas
+app.get("/", (req, res) => {
+  res.send("API EduLink en ejecución");
 });
 
+app.use("/api/auth", require("./src/routes/authRoutes"));
 
+// Arranque
 app.listen(port, () => {
-  console.log(`El servidor está escuchando en http://localhost:${port}`);
+  console.log(`Servidor escuchando en http://localhost:${port}`);
 });
