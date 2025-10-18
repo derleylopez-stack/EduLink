@@ -4,12 +4,12 @@ import logo from './assets/img/logo.png';
 
 function Home() {
   const links = ["Inicio", "Mensajes", "Créditos", "Mi Perfil"];
-  const active = "Mensajes"; // puedes cambiarlo según la pantalla activa
+  const active = "Inicio"; // puedes cambiarlo según la pantalla activa
 
   return (
     <div className="flex flex-col min-h-screen  bg-gradient-to-br from-blue-300 via-green-200 to-blue-300">
       {/* Contenedor principal más ancho */}
-      <div className="w-[95%] mx-auto mt-2 bg-white/70 rounded-2xl shadow-lg px-6 py-4">
+     <div className="w-[95%] mx-auto mt-2 bg-white/70 rounded-2xl shadow-lg px-6 py-4">
 
         {/* Navbar */}
         <header className="w-full mb-6">
